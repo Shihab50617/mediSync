@@ -187,7 +187,7 @@ const InsurancePlan = () => {
                   <tbody>
                     <tr className="border-b border-gray-300">
                       <td className="text-center py-2 px-4">
-                        ₹
+                        
                         {selectedPlanData.categories
                           .find(
                             (category) =>
@@ -199,7 +199,7 @@ const InsurancePlan = () => {
                           .sumInsured.toLocaleString("en-IN")}
                       </td>
                       <td className="text-center py-2 px-4">
-                        ₹
+                        
                         {Math.round(
                           selectedPlanData.categories
                             .find(
@@ -213,7 +213,7 @@ const InsurancePlan = () => {
                         ).toLocaleString("en-IN")}
                       </td>
                       <td className="text-center py-2 px-4">
-                        ₹
+                        
                         {selectedPlanData.categories
                           .find(
                             (category) =>
@@ -225,7 +225,7 @@ const InsurancePlan = () => {
                           .premiumWithTax.toLocaleString("en-IN")}
                       </td>
                       <td className="text-center py-2 px-4">
-                        ₹
+                        
                         {selectedPlanData.categories
                           .find(
                             (category) =>
@@ -237,7 +237,7 @@ const InsurancePlan = () => {
                           .premiumWithoutTax.toLocaleString("en-IN")}
                       </td>
                       <td className="text-center py-2 px-4">
-                        ₹
+                        
                         {selectedPlanData.categories
                           .find(
                             (category) =>

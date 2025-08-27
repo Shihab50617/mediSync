@@ -1,4 +1,3 @@
-// userValidator.js
 const Joi = require("joi");
 
 // Validation schema for creating a user
@@ -10,7 +9,7 @@ exports.createUserValidator = (req, res, next) => {
     firstName: Joi.string().required(),
     lastName: Joi.string().required(),
     age: Joi.number().integer().min(1).required(),
-    gender: Joi.string().valid("Male", "Female", "Other").required(),
+    gender: Joi.string().valid("Male", "Female").required(),
     address: Joi.string().required(),
     city: Joi.string().required(),
     country: Joi.string().required(),
@@ -33,7 +32,7 @@ exports.updateUserValidator = (req, res, next) => {
     firstName: Joi.string(),
     lastName: Joi.string(),
     age: Joi.number().integer().min(1),
-    gender: Joi.string().valid("Male", "Female", "Other"),
+    gender: Joi.string().valid("Male", "Female"),
     address: Joi.string(),
     city: Joi.string(),
     country: Joi.string(),

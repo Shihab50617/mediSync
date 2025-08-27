@@ -4,22 +4,10 @@ const ClaimStatus = () => {
   // Simulated claim status data - Replace this with actual data from API or state
   const claimStatusData = [
     {
-      claimNumber: "CLM123456",
-      status: "Pending",
-      amount: "₹25,000",
-      date: "2023-07-29",
-      policyHolder: "Pavan Korat",
-      phoneNumber: "+91 8511411930",
-      email: "pavankorat@example.com",
+      
     },
     {
-      claimNumber: "CLM789012",
-      status: "Approved",
-      amount: "₹15,000",
-      date: "2023-07-20",
-      policyHolder: "Aayush Patel",
-      phoneNumber: "+91 9328373131",
-      email: "aayushpatel@example.com",
+      
     },
     // Add more claim status data as needed
   ];

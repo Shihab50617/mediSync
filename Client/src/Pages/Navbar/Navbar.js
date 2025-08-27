@@ -13,9 +13,9 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="relative px-4 py-4 flex justify-between items-center bg-white">
+      <nav className="relative px-4  flex justify-between items-center bg-white">
         <Link to="/" className="flex items-center">
-          <img src={logo} className="h-[80px] mr-3" alt="Logo" />
+          <img src={logo} className="h-[120px] w-[199px] mr-3" alt="Logo" />
         </Link>
         <ul className="hidden lg:flex items-center space-x-6">
           <li>
@@ -92,7 +92,7 @@ const Navbar = () => {
           <button
             type="button"
             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600  flex items-center"
-            href="tel:+91 8511411930"
+            href="tel:+8801750617596"
           >
             <RiCustomerService2Line className="mr-1" />
             <span>Call Us</span>
@@ -107,8 +107,8 @@ const Navbar = () => {
             </button>
           ) : (
             // Show the "Login" link if user is not authenticated
-            <Link className="text-sm text-blue-600 font-bold" to="/plans">
-              Login
+            <Link className="text-sm text-blue-600 font-bold" to="/login">
+             Sign in
             </Link>
           )}
         </div>

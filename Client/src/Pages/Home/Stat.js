@@ -26,12 +26,12 @@ const Stat = () => {
       interval = setInterval(() => {
         setDownloads((prevDownloads) => {
           const newDownloads = prevDownloads + 10;
-          return newDownloads >= 2700 ? 2700 : newDownloads;
+          return newDownloads >= 270 ? 270 : newDownloads;
         });
 
         setUsers((prevUsers) => {
           const newUsers = prevUsers + 5;
-          return newUsers >= 1300 ? 1300 : newUsers;
+          return newUsers >= 300 ? 300 : newUsers;
         });
 
         setFiles((prevFiles) => {
@@ -55,7 +55,7 @@ const Stat = () => {
         <div className="container px-5 py-14 mx-auto">
           <div className="flex flex-col text-center w-full mb-5">
             <h5 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-blue-600">
-              Why Caresure Health ?
+              Why mediSync Health ?
             </h5>
           </div>
           <div className="flex flex-wrap -m-4 text-center">
@@ -98,7 +98,7 @@ const Stat = () => {
                   {users} +
                 </h2>
                 <p className="leading-relaxed">
-                  Network Hospitals across India
+                  Network Hospitals across Bangladesh
                 </p>
               </div>
             </div>

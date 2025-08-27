@@ -107,9 +107,8 @@ const Detaillist = () => {
             >
               <div className="font-medium text-[18px] my-1">Sum Insured</div>
               <div className="text-gray-700 mt-1">
-                The Sum Insured options under this policy are Rs.5,00,000/-,
-                Rs.10,00,000/-, Rs.15,00,000/-, Rs.20,00,000/- , Rs.25,00,000/-,
-                Rs.50,00,000/- and Rs.1,00,00,000/-.
+                The Insured options under this policy  BDT.5,00,000/-
+               
               </div>
             </th>
           </tr>

@@ -43,7 +43,7 @@ const GeneralTerms = () => {
             href="mailto:grievances@Caresurehealth.in"
             className="text-blue-500 underline"
           >
-            grievances@Caresurehealth.in
+            grievances@mediSync.in
           </a>
         </p>
         <p className="mt-2">

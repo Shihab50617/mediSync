@@ -1,22 +1,32 @@
 // userController.js
 const User = require("../models/userModel");
 const { v4: uuidv4 } = require("uuid");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
-// Create a new user
+// Create a new user (Register)
 exports.createUser = async (req, res) => {
   try {
-    // Generate a unique ID
+    // Generate unique ID
     const uniqueId = uuidv4();
 
-    // Combine the unique ID with other fields from the request body
-    const user = new User({ id: uniqueId, ...req.body });
+    // Hash password before saving
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
-    // Save the user to the MongoDB collection
+    // Create user object
+    const user = new User({
+      id: uniqueId,
+      ...req.body,
+      password: hashedPassword, // save hashed password
+    });
+
+    // Save in MongoDB
     await user.save();
 
     return res.status(201).json({ message: "User created successfully", user });
   } catch (err) {
-    console.error(err); // Log the error for debugging
+    console.error("Error creating user:", err);
     return res.status(500).json({ error: "Internal server error" });
   }
 };
@@ -38,7 +48,6 @@ exports.getUserById = async (req, res) => {
     if (!user) {
       return res.status(404).json({ error: "User not found" });
     }
-
     return res.status(200).json(user);
   } catch (err) {
     return res.status(500).json({ error: "Internal server error" });
@@ -48,6 +57,12 @@ exports.getUserById = async (req, res) => {
 // Update a user by ID
 exports.updateUserById = async (req, res) => {
   try {
+    // If password is updated, hash it
+    if (req.body.password) {
+      const salt = await bcrypt.genSalt(10);
+      req.body.password = await bcrypt.hash(req.body.password, salt);
+    }
+
     const user = await User.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
     });
@@ -55,40 +70,47 @@ exports.updateUserById = async (req, res) => {
       return res.status(404).json({ error: "User not found" });
     }
 
-    return res.status(200).json({ message: "User updated successfully", user });
+    return res
+      .status(200)
+      .json({ message: "User updated successfully", user });
   } catch (err) {
     return res.status(500).json({ error: "Internal server error" });
   }
 };
-// User Login route
+
+// User Login
 exports.loginUser = async (req, res) => {
   try {
     const { username, password } = req.body;
 
-    // Find the user by username
+    // Find user
     const user = await User.findOne({ username });
-
-    // If the user does not exist, return an error
     if (!user) {
       return res.status(401).json({ error: "Invalid username or password" });
     }
 
-    // Compare the provided password with the hashed password in the database
+    // Compare password
     const passwordMatch = await bcrypt.compare(password, user.password);
-
-    if (passwordMatch) {
-      // Generate a JWT token for user authentication
-      const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
-
-      return res.status(200).json({ authenticated: true, token });
-    } else {
+    if (!passwordMatch) {
       return res.status(401).json({ error: "Invalid username or password" });
     }
+
+    // Generate JWT token
+    const token = jwt.sign(
+      { _id: user._id, username: user.username },
+      process.env.TOKEN_SECRET,
+      { expiresIn: "1h" }
+    );
+
+    return res
+      .status(200)
+      .json({ message: "Login successful", authenticated: true, token });
   } catch (error) {
     console.error("Error during user login:", error);
     return res.status(500).json({ error: "Internal server error" });
   }
 };
+
 // Delete a user by ID
 exports.deleteUserById = async (req, res) => {
   try {
@@ -96,7 +118,6 @@ exports.deleteUserById = async (req, res) => {
     if (!user) {
       return res.status(404).json({ error: "User not found" });
     }
-
     return res.status(200).json({ message: "User deleted successfully" });
   } catch (err) {
     return res.status(500).json({ error: "Internal server error" });

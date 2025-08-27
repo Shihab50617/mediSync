@@ -1,38 +1,51 @@
 [
   {
-    "email": "mirajsankdecha@gmail.com",
+    "email": "rahim.hossain@gmail.com",
     "password": "123",
-    "username": "mirajsankdecha",
-    "firstName": "Miraj",
-    "lastName": "Sankdecha",
-    "age": 20,
+    "username": "rahimhossain",
+    "firstName": "Rahim",
+    "lastName": "Hossain",
+    "age": 22,
     "gender": "Male",
-    "address": "Mavdi Chokdi",
-    "city": "Rajkot",
-    "country": "India"
+    "address": "Dhanmondi 27",
+    "city": "Dhaka",
+    "country": "Bangladesh"
   },
   {
-    "email": "pavankorat@gmail.com",
+    "email": "afrinakter@gmail.com",
     "password": "123456",
-    "username": "pavankorat",
-    "firstName": "pavan",
-    "lastName": "korat",
-    "age": 19,
-    "gender": "Male",
-    "address": "KKV Hall",
-    "city": "Rajkot",
-    "country": "India"
+    "username": "afrinakter",
+    "firstName": "Afrin",
+    "lastName": "Akter",
+    "age": 21,
+    "gender": "Female",
+    "address": "Agrabad",
+    "city": "Chattogram",
+    "country": "Bangladesh"
   },
   {
-    "email": "aayushpatel@gmail.com",
+    "email": "sajid.khan@gmail.com",
     "password": "123",
-    "username": "aayushpatel",
-    "firstName": "aayush",
-    "lastName": "patel",
-    "age": 19,
+    "username": "sajidkhan",
+    "firstName": "Sajid",
+    "lastName": "Khan",
+    "age": 23,
     "gender": "Male",
-    "address": "Madhapar Chokdi",
-    "city": "Kuvadva",
-    "country": "India"
+    "address": "Zindabazar",
+    "city": "Sylhet",
+    "country": "Bangladesh"
+  },
+  {
+    "email": "shahriarshihab96@gmail.com",
+    "password": "12345",
+    "username": "shihab",
+    "firstName": "Shahriar",
+    "lastName": "Shihab",
+    "age": 23,
+    "gender": "Male",
+    "address": "Mirpur 10",
+    "city": "Dhaka",
+    "country": "Bangladesh"
   }
 ]
+

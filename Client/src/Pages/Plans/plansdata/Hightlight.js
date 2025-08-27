@@ -39,8 +39,8 @@ const Hightlight = () => {
               </h2>
               <p className="leading-relaxed text-base">
                 Hospitalisation expenses incurred for Bariatric surgical
-                procedures are covered up to the limits of Rs. 2,50,000/- and
-                Rs. 5,00,000/- which are inclusive of pre and post
+                procedures are covered up to the limits of  2,50,000/- and
+               5,00,000/- which are inclusive of pre and post
                 hospitalisation expenses.
               </p>
             </div>

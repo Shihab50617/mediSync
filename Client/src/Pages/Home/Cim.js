@@ -26,7 +26,7 @@ const Cim = () => {
               </svg>
 
               <div className="text-3xl font-bold text-indigo-600">
-                75 Lakh +
+                2 Lakh +
               </div>
             </div>
             <div className="flex items-center space-x-1">
@@ -53,12 +53,12 @@ const Cim = () => {
               </svg>
 
               <div className="text-3xl font-bold text-indigo-600">
-                4 Crore +
+                5 Lakh +
               </div>
             </div>
             <div className="flex items-center space-x-1">
               <div className="text-sm font-light text-black">
-                Rupees claims settled every hour
+                BDT claims settled every hour
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@ const Cim = () => {
               </svg>
 
               <div className="text-3xl font-bold text-indigo-600">
-                5000 + Claims
+                3000 + Claims
               </div>
             </div>
             <div className="flex items-center space-x-1">

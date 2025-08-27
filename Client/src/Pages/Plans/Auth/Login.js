@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useAuth } from "./auth";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const { login } = useAuth();
@@ -11,7 +11,7 @@ const Login = () => {
   const handleLogin = async () => {
     try {
       await login(username, password);
-      // Redirect to the dashboard or other protected routes on successful login
+      
     } catch (error) {
       setError(error.message);
     }
@@ -25,7 +25,7 @@ const Login = () => {
           <div className="max-w-md mx-auto">
             <div>
               <h1 className="text-2xl font-semibold">
-                Login Form with Caresure Health Insurance
+                Sign in  
               </h1>
             </div>
             <div className="divide-y divide-gray-200">
@@ -69,16 +69,19 @@ const Login = () => {
                 <div className="relative">
                   <button
                     onClick={handleLogin}
-                    className="bg-blue-500 text-white rounded-md px-4 py-2 mr-2"
+                    className="bg-blue-500 text-white rounded-md px-3 py-1 mr-2"
                   >
-                    Submit
+                    Sign in
                   </button>
+                  <div className="text-sm mt-5">
+                     Don't have an account!
                   <Link
-                    to="/register" // This should match the path of the RegisterForm route
-                    className="text-blue-500 hover:text-blue-700 font-bold"
+                    to="/register"
+                    className="text-blue-500 hover:text-blue-700 font-sm underline"
                   >
-                    Register
+                     Sign Up 
                   </Link>
+                    </div>
                 </div>
                 {error && <p className="text-red-500">{error}</p>}
               </div>

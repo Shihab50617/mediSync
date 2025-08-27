@@ -44,7 +44,7 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
   id: {
-    type: String, // Use String for the UUID
+    type: String, 
     required: true,
     unique: true,
   },

@@ -38,22 +38,9 @@ const Map = () => {
 
   return (
     <>
-      <section className="text-gray-600 body-font relative bg-white">
-        <div className="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
-          <div className="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
-            <iframe
-              width="100%"
-              height="100%"
-              className="absolute inset-0"
-              frameBorder={0}
-              title="map"
-              marginHeight={0}
-              marginWidth={0}
-              scrolling="no"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59070.20388728314!2d70.6916195486328!3d22.282241800000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959cbbfcdeb3e33%3A0x11a782bf6775a71d!2sAtmiya%20University!5e0!3m2!1sen!2sin!4v1691511140502!5m2!1sen!2sin"
-              style={{ filter: "grayscale(1) contrast(1.2) opacity(0.4)" }}
-            />
-          </div>
+      <section className="text-gray-600 body-font mx-auto bg-white">
+        
+        
           <div className="lg:w-1/3 p-5 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
             <h2 className="text-gray-900 text-lg mb-1 font-medium title-font">
               Feedback
@@ -129,7 +116,7 @@ const Map = () => {
               </>
             )}
           </div>
-        </div>
+       
       </section>
     </>
   );

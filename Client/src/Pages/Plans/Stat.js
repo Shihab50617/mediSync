@@ -15,10 +15,10 @@ const Stat = () => {
               </div>
               <div className="flex-grow">
                 <h2 className="text-gray-900 text-3xl title-font font-medium mb-3">
-                  8861 Crore+
+                  28 Crore+
                 </h2>
                 <p className="leading-relaxed text-base">
-                  Claims settled in FY 2021-22
+                  Claims settled in FY 2023-24
                 </p>
               </div>
             </div>
@@ -47,10 +47,10 @@ const Stat = () => {
               </div>
               <div className="flex-grow">
                 <h2 className="text-gray-900 text-3xl title-font font-medium mb-3">
-                  30385 Crore+
+                  30 Crore+
                 </h2>
                 <p className="leading-relaxed text-base">
-                  Rupees claim amount settled since inception
+                  BDT claim amount settled since inception
                 </p>
               </div>
             </div>

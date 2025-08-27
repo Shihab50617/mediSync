@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios"; // Import Axios
-import { useAuth } from "./Auth/auth"; // Import useAuth from your custom hook
+import axios from "axios"; 
+import { useAuth } from "./Auth/auth"; 
 
 const Hplan = () => {
   const [selectedCategory, setSelectedCategory] = useState("All categories");
@@ -40,9 +40,9 @@ const Hplan = () => {
         console.error("Error fetching data:", error);
         setLoading(false);
       });
-  }, [searchQuery]); // Include searchQuery as a dependency
+  }, [searchQuery]); 
 
-  // Fetch the user object from useAuth hook
+  
   const { user } = useAuth();
   return (
     <div>
@@ -187,7 +187,7 @@ const Hplan = () => {
 
         {loading ? (
           <div>Loading...</div>
-        ) : // Render your data here
+        ) : 
         filteredPlans.length === 0 ? (
           <div className="text-red-600 font-bold">No plans found.</div>
         ) : (
@@ -235,7 +235,7 @@ const Hplan = () => {
                         to="/login"
                         className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:ring-blue-300 focus:outline-none focus:ring h-10 w-32"
                       >
-                        Sign In to View Plan
+                      View Plan
                       </Link>
                     )}
                   </div>

@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useAuth } from "./auth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const RegisterForm = () => {
   const { register } = useAuth();
   const [formData, setFormData] = useState({
+    username: "",
     email: "",
     password: "",
-    username: "",
     firstName: "",
     lastName: "",
     age: "",
@@ -38,42 +38,140 @@ const RegisterForm = () => {
       .catch((error) => {
         console.error("Error creating user: ", error);
 
-        let errorMessage = "Go to Log In page and Enter your credentials";
-
-        if (
-          error.response &&
-          error.response.data &&
-          error.response.data.error
-        ) {
-          // If the server sends an error message, use it
-          errorMessage = error.response.data.error;
-        }
-
-        window.alert(errorMessage);
+        
       });
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <h1 className="text-3xl font-bold mb-4">Register</h1>
-      <div className="w-64">
-        {Object.keys(formData).map((field) => (
-          <input
-            key={field}
-            type={field === "password" ? "password" : "text"}
-            name={field}
-            value={formData[field]}
-            onChange={handleChange}
-            placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
-            className="w-full px-4 py-2 mb-2 rounded border"
-          />
-        ))}
-        <button
-          onClick={handleRegister}
-          className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
-        >
-          Register
-        </button>
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4">
+      <div className="w-full max-w-lg bg-white shadow-md rounded-xl p-6">
+        <h1 className="text-2xl font-bold text-center text-gray-800 mb-4">
+         Sign Up
+        </h1>
+
+        <form className="space-y-3">
+         
+          <div>
+            <input
+              type="text"
+              name="username"
+              value={formData.username}
+              onChange={handleChange}
+              placeholder="Username"
+              className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-400"
+            />
+          </div>
+
+         
+          <div className="grid grid-cols-2 gap-3">
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Email"
+              className="px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-400"
+            />
+            <input
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              placeholder="Password"
+              className="px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-400"
+            />
+          </div>
+
+         
+          <div className="grid grid-cols-2 gap-3">
+            <input
+              type="text"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+              placeholder="First Name"
+              className="px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-400"
+            />
+            <input
+              type="text"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+              placeholder="Last Name"
+              className="px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-400"
+            />
+          </div>
+
+          <div className="grid grid-cols-2 gap-3">
+            <input
+              type="number"
+              name="age"
+              value={formData.age}
+              onChange={handleChange}
+              placeholder="Age"
+              className="px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-400"
+            />
+            <input
+              name="gender"
+              
+              value={formData.gender}
+              onChange={handleChange}
+               placeholder="Gender"
+              className="px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-400"
+            >
+              
+             
+            </input>
+          </div>
+
+      
+          <div>
+            <input
+              type="text"
+              name="address"
+              value={formData.address}
+              onChange={handleChange}
+              placeholder="Address"
+              className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-400"
+            />
+          </div>
+
+         
+          <div className="grid grid-cols-2 gap-3">
+            <input
+              type="text"
+              name="city"
+              value={formData.city}
+              onChange={handleChange}
+              placeholder="City"
+              className="px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-400"
+            />
+            <input
+              type="text"
+              name="country"
+              value={formData.country}
+              onChange={handleChange}
+              placeholder="Country"
+              className="px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-400"
+            />
+          </div>
+
+    
+          <button
+            type="button"
+            onClick={handleRegister}
+            className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 rounded-lg transition duration-200"
+          >
+            Sign Up
+          </button>
+        </form>
+
+        <p className="text-center text-sm text-gray-600 mt-3">
+          Already have an account?{" "}
+          <Link to="/login" className="text-green-600 hover:underline">
+            Sign in
+          </Link>
+        </p>
       </div>
     </div>
   );

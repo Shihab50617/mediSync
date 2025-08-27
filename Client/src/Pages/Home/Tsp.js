@@ -24,7 +24,7 @@ const Tsp = () => {
             </div>
             <div className="grid p-4">
               <div className="font-bold  text-black mt-10 text-2xl">
-                Caresure Comprehensive Insurance Policy
+                mediSync Comprehensive Insurance Policy
               </div>
               <div className="text-gray-500 mt-2 text-md">
                 Extensive healthcare protection for your family. Get maximum
@@ -38,7 +38,7 @@ const Tsp = () => {
           <div className="overflow-hidden bg-white m-4 shadow-lg flex flex-col md:flex-row justify-center">
             <div className="grid p-4">
               <div className="font-bold  text-black mt-10 text-2xl">
-                Caresure Health Premier Insurance Policy
+                mediSync Health Premier Insurance Policy
               </div>
               <div className="text-gray-500 mt-2 text-md">
                 Cherish your 50's without worrying about your medical expenses.
@@ -67,7 +67,7 @@ const Tsp = () => {
             </div>
             <div className="grid p-4">
               <div className="font-bold  text-black mt-10 text-2xl">
-                Caresure Health Assure Insurance Policy
+                mediSync Health Insurance Policy
               </div>
               <div className="text-gray-500 mt-2 text-md">
                 Affordable health policy with vast benefits. Cover your entire

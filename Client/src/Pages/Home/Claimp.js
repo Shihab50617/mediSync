@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Claimp = () => {
   return (
@@ -15,9 +16,11 @@ const Claimp = () => {
             <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 font-semibold mx-auto text-gray-500s">
               Intimate your claim effortlessly.
             </p>
+            <Link to="/login">
             <button className="flex mx-auto mt-7 text-white bg-[#EE744D] border-0 py-2 px-8 focus:outline-none hover:bg-[#FF4500] rounded text-lg">
               File a Claim &gt;
             </button>
+            </Link>
             <div className="flex mt-6 justify-center">
               <div className="w-16 h-1 rounded-full bg-indigo-500 inline-flex" />
             </div>
@@ -68,7 +71,7 @@ const Claimp = () => {
                   24X7 Support
                 </h2>
                 <p className="leading-relaxed text-base">
-                  Call us at +91 93283-73131 / +91 85114-411930 to clear your
+                  Call us at +880190000000 / +8801700000000 to clear your
                   queries.
                 </p>
               </div>

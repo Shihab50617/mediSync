@@ -7,7 +7,7 @@ const planRoutes = require("./routes/planRoutes");
 const planDataRoutes = require("./routes/plandataRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const authRoutes = require("./routes/authRoutes");
-require("dotenv").config(); // Load environment variables from .env
+require("dotenv").config(); 
 
 const app = express();
 const port = process.env.PORT || 5000; // Use PORT from .env or default to 5000

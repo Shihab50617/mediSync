@@ -18,12 +18,12 @@ export const AuthProvider = ({ children }) => {
       
 
       if (response.data.token) {
-        // Set the user and token in state
+       
         setUser({
           username,
           token: response.data.token,
         });
-        // Store the token in localStorage for persistence
+        
         localStorage.setItem("token", response.data.token);
       } else {
         throw new Error("Invalid username or password");
@@ -35,9 +35,9 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    // Remove user and token from state
+    
     setUser(null);
-    // Remove the token from localStorage
+    
     localStorage.removeItem("token");
   };
 
