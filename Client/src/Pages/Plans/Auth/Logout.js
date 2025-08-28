@@ -8,7 +8,7 @@ const Logout = () => {
 
   const handleLogout = () => {
     logout();
-    navigate("/"); // Redirect to the home page ("/") after logout
+    navigate("/"); 
   };
 
   return (

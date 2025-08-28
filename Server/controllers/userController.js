@@ -1,33 +1,34 @@
-// userController.js
 const User = require("../models/userModel");
 const { v4: uuidv4 } = require("uuid");
 const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
 
 // Create a new user (Register)
 exports.createUser = async (req, res) => {
   try {
-    // Generate unique ID
     const uniqueId = uuidv4();
 
-    // Hash password before saving
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(req.body.password, salt);
-
-    // Create user object
+    // Create user object (password will be hashed by schema pre-save hook)
     const user = new User({
       id: uniqueId,
       ...req.body,
-      password: hashedPassword, // save hashed password
     });
 
-    // Save in MongoDB
     await user.save();
-
-    return res.status(201).json({ message: "User created successfully", user });
+    return res.status(201).json({ success: true, message: "User created successfully" });
   } catch (err) {
     console.error("Error creating user:", err);
-    return res.status(500).json({ error: "Internal server error" });
+
+    // Handle duplicate key error (e.g., email already exists)
+    if (err.code === 11000) {
+      return res.status(400).json({ success: false, error: "Email or ID already exists" });
+    }
+
+    // Handle validation errors
+    if (err.name === "ValidationError") {
+      return res.status(400).json({ success: false, error: err.message });
+    }
+
+    return res.status(500).json({ success: false, error: "Internal server error" });
   }
 };
 
@@ -57,57 +58,39 @@ exports.getUserById = async (req, res) => {
 // Update a user by ID
 exports.updateUserById = async (req, res) => {
   try {
-    // If password is updated, hash it
-    if (req.body.password) {
-      const salt = await bcrypt.genSalt(10);
-      req.body.password = await bcrypt.hash(req.body.password, salt);
-    }
-
-    const user = await User.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-    });
+    const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
     if (!user) {
       return res.status(404).json({ error: "User not found" });
     }
-
-    return res
-      .status(200)
-      .json({ message: "User updated successfully", user });
+    return res.status(200).json({ success: true, message: "User updated successfully", user });
   } catch (err) {
     return res.status(500).json({ error: "Internal server error" });
   }
 };
 
 // User Login
+
 exports.loginUser = async (req, res) => {
   try {
-    const { username, password } = req.body;
+    const { email, password } = req.body;
 
-    // Find user
-    const user = await User.findOne({ username });
+    const user = await User.findOne({ email });
     if (!user) {
-      return res.status(401).json({ error: "Invalid username or password" });
+      return res.status(401).json({ success: false, error: "Invalid email or password" });
     }
 
-    // Compare password
     const passwordMatch = await bcrypt.compare(password, user.password);
     if (!passwordMatch) {
-      return res.status(401).json({ error: "Invalid username or password" });
+      return res.status(401).json({ success: false, error: "Invalid email or password" });
     }
 
-    // Generate JWT token
-    const token = jwt.sign(
-      { _id: user._id, username: user.username },
-      process.env.TOKEN_SECRET,
-      { expiresIn: "1h" }
-    );
+    // Return user object (without password) to frontend
+    const { password: pwd, ...userData } = user.toObject();
 
-    return res
-      .status(200)
-      .json({ message: "Login successful", authenticated: true, token });
+    return res.status(200).json({ success: true, user: userData, message: "Login successful" });
   } catch (error) {
     console.error("Error during user login:", error);
-    return res.status(500).json({ error: "Internal server error" });
+    return res.status(500).json({ success: false, error: "Internal server error" });
   }
 };
 
@@ -118,7 +101,7 @@ exports.deleteUserById = async (req, res) => {
     if (!user) {
       return res.status(404).json({ error: "User not found" });
     }
-    return res.status(200).json({ message: "User deleted successfully" });
+    return res.status(200).json({ success: true, message: "User deleted successfully" });
   } catch (err) {
     return res.status(500).json({ error: "Internal server error" });
   }

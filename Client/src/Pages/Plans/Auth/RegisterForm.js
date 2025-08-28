@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useAuth } from "./auth";
 import { Link, useNavigate } from "react-router-dom";
 
 const RegisterForm = () => {
-  const { register } = useAuth();
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -25,44 +23,51 @@ const RegisterForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleRegister = () => {
-    axios
-      .post("http://localhost:5000/users/create", formData)
-      .then((response) => {
-        console.log("User created successfully", response.data);
-        window.alert("User registered successfully!");
-        const { email, password, username } = formData;
-        register(email, password, username);
-        navigate("/");
-      })
-      .catch((error) => {
-        console.error("Error creating user: ", error);
+  const handleRegister = async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/users/create",
+        formData
+      );
 
-        
-      });
+     if (response.data.success) {
+  window.alert(response.data.message);
+  navigate("/login");
+} else {
+  window.alert(response.data.error || "Registration failed");
+}
+
+
+    }  catch (error) {
+  if (error.response) {
+    console.error("Error creating user:", error.response.data);
+    console.error("Status code:", error.response.status);
+    window.alert(`Error during registration: ${error.response.data.error || error.response.data.message}`);
+  } else {
+    console.error("Error creating user:", error.message);
+    window.alert("Error during registration.");
+  }
+}
+
   };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4">
       <div className="w-full max-w-lg bg-white shadow-md rounded-xl p-6">
         <h1 className="text-2xl font-bold text-center text-gray-800 mb-4">
-         Sign Up
+          Sign Up
         </h1>
 
         <form className="space-y-3">
-         
-          <div>
-            <input
-              type="text"
-              name="username"
-              value={formData.username}
-              onChange={handleChange}
-              placeholder="Username"
-              className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-400"
-            />
-          </div>
+          <input
+            type="text"
+            name="username"
+            value={formData.username}
+            onChange={handleChange}
+            placeholder="Username"
+            className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-400"
+          />
 
-         
           <div className="grid grid-cols-2 gap-3">
             <input
               type="email"
@@ -82,7 +87,6 @@ const RegisterForm = () => {
             />
           </div>
 
-         
           <div className="grid grid-cols-2 gap-3">
             <input
               type="text"
@@ -104,7 +108,7 @@ const RegisterForm = () => {
 
           <div className="grid grid-cols-2 gap-3">
             <input
-              type="number"
+              type="text"
               name="age"
               value={formData.age}
               onChange={handleChange}
@@ -112,31 +116,24 @@ const RegisterForm = () => {
               className="px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-400"
             />
             <input
+              type="text"
               name="gender"
-              
               value={formData.gender}
               onChange={handleChange}
-               placeholder="Gender"
+              placeholder="Gender"
               className="px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-400"
-            >
-              
-             
-            </input>
-          </div>
-
-      
-          <div>
-            <input
-              type="text"
-              name="address"
-              value={formData.address}
-              onChange={handleChange}
-              placeholder="Address"
-              className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-400"
             />
           </div>
 
-         
+          <input
+            type="text"
+            name="address"
+            value={formData.address}
+            onChange={handleChange}
+            placeholder="Address"
+            className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-400"
+          />
+
           <div className="grid grid-cols-2 gap-3">
             <input
               type="text"
@@ -156,7 +153,6 @@ const RegisterForm = () => {
             />
           </div>
 
-    
           <button
             type="button"
             onClick={handleRegister}

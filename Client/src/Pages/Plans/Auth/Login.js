@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
   const { login } = useAuth();
-  const [username, setUsername] = useState("");
+  const [email, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const handleLogin = async () => {
     try {
-      await login(username, password);
+      await login(email, password);
       
     } catch (error) {
       setError(error.message);
@@ -34,18 +34,18 @@ const Login = () => {
                   <input
                     autoComplete="off"
                     id="username"
-                    name="username"
+                    name="email"
                     type="text"
                     className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600"
-                    placeholder="Username"
-                    value={username}
+                    placeholder="Email"
+                    value={email}
                     onChange={(e) => setUsername(e.target.value)}
                   />
                   <label
-                    htmlFor="username"
+                    htmlFor="email"
                     className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
                   >
-                    Username
+                   Email
                   </label>
                 </div>
                 <div className="relative">

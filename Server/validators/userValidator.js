@@ -4,7 +4,7 @@ const Joi = require("joi");
 exports.createUserValidator = (req, res, next) => {
   const schema = Joi.object({
     email: Joi.string().email().required(),
-    password: Joi.string().min(6).required(),
+    password: Joi.string().min(4).required(),
     username: Joi.string().alphanum().min(3).max(30).required(),
     firstName: Joi.string().required(),
     lastName: Joi.string().required(),
@@ -36,7 +36,7 @@ exports.updateUserValidator = (req, res, next) => {
     address: Joi.string(),
     city: Joi.string(),
     country: Joi.string(),
-  }).min(1); // At least one field must be present for an update
+  }).min(1);
 
   const { error } = schema.validate(req.body);
   if (error) {
