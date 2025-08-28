@@ -7,73 +7,17 @@ const ClaimHelpdesk = () => {
   const handleStateChange = (selectedState) => {
     setState(selectedState);
 
-    // Replace fictional helpline numbers with actual numbers for each state
     const helplineNumbers = {
-      "Andhra Pradesh": "1-800-111-1111",
-      "Arunachal Pradesh": "1-800-222-2222",
-      Assam: "1-800-333-3333",
-      Bihar: "1-800-444-4444",
-      Chhattisgarh: "1-800-555-5555",
-      Goa: "1-800-666-6666",
-      Gujarat: "1-800-777-7777",
-      Haryana: "1-800-888-8888",
-      "Himachal Pradesh": "1-800-999-9999",
-      Jharkhand: "1-800-123-4567",
-      Karnataka: "1-800-987-6543",
-      Kerala: "1-800-543-2109",
-      "Madhya Pradesh": "1-800-987-6543",
-      Maharashtra: "1-800-543-2109",
-      Manipur: "1-800-987-6543",
-      Meghalaya: "1-800-543-2109",
-      Mizoram: "1-800-987-6543",
-      Nagaland: "1-800-543-2109",
-      Odisha: "1-800-987-6543",
-      Punjab: "1-800-543-2109",
-      Rajasthan: "1-800-987-6543",
-      Sikkim: "1-800-543-2109",
-      "Tamil Nadu": "1-800-987-6543",
-      Telangana: "1-800-543-2109",
-      Tripura: "1-800-987-6543",
-      "Uttar Pradesh": "1-800-543-2109",
-      Uttarakhand: "1-800-987-6543",
-      "West Bengal": "1-800-543-2109",
-      // Add helpline numbers for other states of India
+  
     };
 
     setHelplineNumber(helplineNumbers[selectedState] || "");
   };
 
-  // List of all states of India
+  
   const statesOfIndia = [
-    "Andhra Pradesh",
-    "Arunachal Pradesh",
-    "Assam",
-    "Bihar",
-    "Chhattisgarh",
-    "Goa",
-    "Gujarat",
-    "Haryana",
-    "Himachal Pradesh",
-    "Jharkhand",
-    "Karnataka",
-    "Kerala",
-    "Madhya Pradesh",
-    "Maharashtra",
-    "Manipur",
-    "Meghalaya",
-    "Mizoram",
-    "Nagaland",
-    "Odisha",
-    "Punjab",
-    "Rajasthan",
-    "Sikkim",
-    "Tamil Nadu",
-    "Telangana",
-    "Tripura",
-    "Uttar Pradesh",
-    "Uttarakhand",
-    "West Bengal",
-    // Add all states of India
+    "Dhaka",
+
   ];
 
   return (
