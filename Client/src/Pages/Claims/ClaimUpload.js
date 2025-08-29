@@ -9,16 +9,13 @@ const ClaimUpload = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    // Assuming you would have some function to handle form submission and file upload
-    // You can send the form data and file to the server using API calls
-
-    // After successful submission, you can clear the form fields
+    
     setClaimType("");
     setPolicyNumber("");
     setMemberName("");
     setUploadFile(null);
 
-    // Show a success message or redirect to a success page
+    
   };
 
   return (
@@ -42,7 +39,7 @@ const ClaimUpload = () => {
             <option value="">Select Claim Type</option>
             <option value="Medical">Medical</option>
             <option value="Accident">Accident</option>
-            {/* Add more claim types as needed */}
+           
           </select>
         </div>
         <div className="mb-4">

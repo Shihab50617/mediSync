@@ -14,16 +14,16 @@ import axios from "axios";
 
 const PlanDetailPage = () => {
   const { _id } = useParams();
-  const planId = _id; // Use the plan ID from the URL parameter
+  const planId = _id; 
   const [plan, setPlan] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch detailed plan data from your Express API based on the plan ID
+ 
     axios
       .get(`http://localhost:5000/plans/${planId}`)
       .then((response) => {
-        // Process the data and set it in your state
+       
         const planData = response.data;
         setPlan(planData);
         setLoading(false);
@@ -35,7 +35,7 @@ const PlanDetailPage = () => {
   }, [planId]);
 
   if (loading) {
-    // You can add a loading spinner or message here while the data is being fetched
+    
     return <div>Loading...</div>;
   }
 
@@ -43,7 +43,7 @@ const PlanDetailPage = () => {
     return <div>Plan not found</div>;
   }
 
-  // Render the detailed plan information here
+
   return (
     <div>
       <Header />

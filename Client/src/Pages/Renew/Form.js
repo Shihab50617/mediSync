@@ -26,10 +26,10 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Log the form data as an array to the console
+
     console.log("formData: ", [policyNumber, selectedDate, mobileNumber]);
 
-    // Clearing the input fields after submission
+  
     setPolicyNumber("");
     setSelectedDate("");
     setMobileNumber("");

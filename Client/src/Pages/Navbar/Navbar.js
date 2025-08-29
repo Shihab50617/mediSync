@@ -2,10 +2,10 @@ import React from "react";
 import { RiCustomerService2Line } from "react-icons/ri";
 import logo from "../../image/logo.png";
 import { Link } from "react-router-dom";
-import { useAuth } from "../Plans/Auth/auth"; // Import the useAuth hook
+import { useAuth } from "../Plans/Auth/auth"; 
 
 const Navbar = () => {
-  const { user, logout } = useAuth(); // Destructure user and logout from useAuth hook
+  const { user, logout } = useAuth(); 
 
   const handleLogout = () => {
     logout();
@@ -98,7 +98,7 @@ const Navbar = () => {
             <span>Call Us</span>
           </button>
           {user ? (
-            // Show the "Log Out" button if user is authenticated
+          
             <button
               className="text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-red-500  flex items-center"
               onClick={handleLogout}
@@ -106,7 +106,7 @@ const Navbar = () => {
               Log Out
             </button>
           ) : (
-            // Show the "Login" link if user is not authenticated
+        
             <Link className="text-sm text-blue-600 font-bold" to="/login">
              Sign in
             </Link>

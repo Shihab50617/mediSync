@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 
 const OnlineBenefit = () => {
-  // Data for all the cards
+  
   const allCards = useMemo(
     () => [
       {
@@ -50,10 +50,9 @@ const OnlineBenefit = () => {
     []
   );
 
-  // State to hold the active card indices
+
   const [activeCardIndices, setActiveCardIndices] = useState([0, 1]);
 
-  // Function to switch cards every 2 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveCardIndices((prevIndices) => {
@@ -62,7 +61,6 @@ const OnlineBenefit = () => {
       });
     }, 2000);
 
-    // Clean up the timer when the component is unmounted
     return () => clearInterval(timer);
   }, [allCards.length]);
 

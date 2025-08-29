@@ -4,8 +4,8 @@ import axios from "axios";
 import { useAuth } from "./Auth/auth"; 
 
 const Hplan = () => {
-  const [allPlans, setAllPlans] = useState([]);          // store all fetched plans
-  const [filteredPlans, setFilteredPlans] = useState([]); // plans after filtering
+  const [allPlans, setAllPlans] = useState([]);         
+  const [filteredPlans, setFilteredPlans] = useState([]); 
   const [selectedCategory, setSelectedCategory] = useState("All categories");
   const [searchQuery, setSearchQuery] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -16,8 +16,8 @@ const Hplan = () => {
  useEffect(() => {
   axios.get("http://localhost:5000/plans/getAll")
     .then(res => {
-      console.log("Axios response:", res);        // check the full response
-      console.log("Axios data:", res.data);       // check the array
+      console.log("Axios response:", res);       
+      console.log("Axios data:", res.data);       
       setAllPlans(res.data);
       setFilteredPlans(res.data);
       setLoading(false);
@@ -29,11 +29,11 @@ const Hplan = () => {
 }, []);
 
 
-  // Filter plans whenever searchQuery or selectedCategory changes
+  
   useEffect(() => {
     const filtered = allPlans.filter((plan) => {
       const matchesSearch = plan.title?.toLowerCase().includes(searchQuery.toLowerCase());
-      // If category doesn't exist, ignore category filter
+      
       const matchesCategory =
         selectedCategory === "All categories" || !plan.category || plan.category === selectedCategory;
       return matchesSearch && matchesCategory;

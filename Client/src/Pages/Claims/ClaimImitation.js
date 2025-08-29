@@ -21,13 +21,13 @@ const ClaimImitation = () => {
       totalAmount,
       receiptImage,
     };
-    // Update the submittedClaims array with the new claim data
+    
     setSubmittedClaims([...submittedClaims, newClaim]);
 
-    // Display the array of submitted claims in the console
+    
     console.log("Submitted Claims:", submittedClaims);
 
-    // Reset the form after submission
+    
     setClaimType("");
     setPolicyHolderName("");
     setPolicyNumber("");
@@ -59,7 +59,7 @@ const ClaimImitation = () => {
             <option value="medical">Medical</option>
             <option value="dental">Dental</option>
             <option value="vision">Vision</option>
-            {/* Add more claim types if needed */}
+           
           </select>
         </div>
         <div>

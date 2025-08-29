@@ -1,7 +1,7 @@
 import React from "react";
 
 const ClaimStatus = () => {
-  // Simulated claim status data - Replace this with actual data from API or state
+ 
   const claimStatusData = [
     {
       
@@ -9,7 +9,7 @@ const ClaimStatus = () => {
     {
       
     },
-    // Add more claim status data as needed
+    
   ];
 
   return (

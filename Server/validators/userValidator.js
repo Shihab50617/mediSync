@@ -1,6 +1,6 @@
 const Joi = require("joi");
 
-// Validation schema for creating a user
+
 exports.createUserValidator = (req, res, next) => {
   const schema = Joi.object({
     email: Joi.string().email().required(),
@@ -23,7 +23,7 @@ exports.createUserValidator = (req, res, next) => {
   next();
 };
 
-// Validation schema for updating a user
+
 exports.updateUserValidator = (req, res, next) => {
   const schema = Joi.object({
     email: Joi.string().email(),

@@ -22,7 +22,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5"
               className="px-6 py-4 font-medium text-gray-900 bg-[#E8E8E8]"
             >
               <div className="font-medium text-[18px] my-1">
@@ -37,7 +37,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#FAFAFA]"
             >
               <div className="font-medium text-[18px] my-1">Policy Term</div>
@@ -50,7 +50,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#E8E8E8]"
             >
               <div className="font-medium text-[18px] my-1">
@@ -68,7 +68,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#FAFAFA]"
             >
               <div className="font-medium text-[18px] my-1">
@@ -83,7 +83,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#E8E8E8]"
             >
               <div className="font-medium text-[18px] my-1">
@@ -102,7 +102,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#FAFAFA]"
             >
               <div className="font-medium text-[18px] my-1">Sum Insured</div>
@@ -115,7 +115,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#E8E8E8]"
             >
               <div className="font-medium text-[18px] my-1">
@@ -130,7 +130,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#FAFAFA]"
             >
               <div className="font-medium text-[18px] my-1">
@@ -146,7 +146,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#E8E8E8]"
             >
               <div className="font-medium text-[18px] my-1">
@@ -161,7 +161,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#FAFAFA]"
             >
               <div className="font-medium text-[18px] my-1">Room Rent</div>
@@ -177,7 +177,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#E8E8E8]"
             >
               <div className="font-medium text-[18px] my-1">Road Ambulance</div>
@@ -191,7 +191,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#FAFAFA]"
             >
               <div className="font-medium text-[18px] my-1">Air Ambulance</div>
@@ -204,7 +204,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#E8E8E8]"
             >
               <div className="font-medium text-[18px] my-1">
@@ -220,7 +220,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#FAFAFA]"
             >
               <div className="font-medium text-[18px] my-1">
@@ -236,7 +236,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#E8E8E8]"
             >
               <div className="font-medium text-[18px] my-1">
@@ -252,7 +252,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#FAFAFA]"
             >
               <div className="font-medium text-[18px] my-1">
@@ -269,7 +269,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#E8E8E8]"
             >
               <div className="font-medium text-[18px] my-1">
@@ -285,7 +285,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#FAFAFA]"
             >
               <div className="font-medium text-[18px] my-1">
@@ -301,7 +301,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#E8E8E8]"
             >
               <div className="font-medium text-[18px] my-1">
@@ -320,7 +320,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#FAFAFA]"
             >
               <div className="font-medium text-[18px] my-1">
@@ -337,7 +337,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#E8E8E8]"
             >
               <div className="font-medium text-[18px] my-1">
@@ -353,7 +353,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#FAFAFA]"
             >
               <div className="font-medium text-[18px] my-1">
@@ -368,7 +368,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#E8E8E8]"
             >
               <div className="font-medium text-[18px] my-1">
@@ -383,7 +383,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#FAFAFA]"
             >
               <div className="font-medium text-[18px] my-1">
@@ -398,7 +398,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#E8E8E8]"
             >
               <div className="font-medium text-[18px] my-1">
@@ -414,7 +414,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#FAFAFA]"
             >
               <div className="font-medium text-[18px] my-1">
@@ -431,7 +431,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#E8E8E8]"
             >
               <div className="font-medium text-[18px] my-1">
@@ -447,7 +447,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#FAFAFA]"
             >
               <div className="font-medium text-[18px] my-1">
@@ -464,7 +464,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#E8E8E8]"
             >
               <div className="font-medium text-[18px] my-1">
@@ -479,7 +479,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#FAFAFA]"
             >
               <div className="font-medium text-[18px] my-1">
@@ -496,7 +496,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#E8E8E8]"
             >
               <div className="font-medium text-[18px] my-1">
@@ -511,7 +511,7 @@ const Detaillist = () => {
           <tr className="border-b">
             <th
               scope="row"
-              colSpan="5" // Add this colspan attribute to make it span all columns
+              colSpan="5" 
               className="px-6 py-4 font-medium text-gray-900 bg-[#FAFAFA]"
             >
               <div className="font-medium text-[18px] my-1">

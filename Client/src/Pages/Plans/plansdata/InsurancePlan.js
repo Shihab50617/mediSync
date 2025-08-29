@@ -51,7 +51,7 @@ const InsurancePlan = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle form submission, e.g., send data to the server
+   
     console.log("Name:", name);
     console.log("Phone Number:", phoneNumber);
     console.log("User ID:", userId);
